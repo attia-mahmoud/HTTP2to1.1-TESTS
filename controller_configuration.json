@@ -1,0 +1,6 @@
+{
+    "ROOT_CERTIFICATE": "/x509/ca.pem",
+    "PRIVATE_CERTIFICATE": "/x509/private_crt.pem",
+    "DESTINATION_IP": "linodeaustralia.admin.worker.nopasaran.org",
+    "SERVER_PORT": "443"
+}
