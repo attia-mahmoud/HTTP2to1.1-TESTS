@@ -1,0 +1,23 @@
+{
+    "role": "client",
+    "client": "client",
+    "server": "server",
+    "controller_conf_filename": "controller_configuration.json",
+    "host": "127.0.0.1",
+    "port": "7700",
+    "tls_enabled": "false",
+    "protocol": "h2",
+    "connection_settings_server": {},
+    "connection_settings_client": {},
+    "cloudflare_origin": "false",
+    "client_frames": [
+        {
+            "type": "HEADERS"
+        }
+    ],
+    "server_frames": [
+        {
+            "type": "HEADERS"
+        }
+    ]
+}
