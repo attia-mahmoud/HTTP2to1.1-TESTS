@@ -355,7 +355,7 @@
         ],
         "DONE": [
           {
-            "target": "CLEANUP_CLIENT",
+            "target": "FINAL",
             "cond": "equal (role client_val)",
             "actions": [
               {
@@ -373,7 +373,7 @@
             ]
           },
           {
-            "target": "CLEANUP_SERVER",
+            "target": "FINAL",
             "actions": [
               {
                 "type": "assign (server) (server)"
@@ -406,62 +406,6 @@
     "CONTROL_CHANNEL_TIMEOUT_AFTER_CLIENT_FRAMES_SENT_SERVER": {
       "entry": {
         "type": "set (Client_Received_Error_From_Proxy) (msg)"
-      }
-    },
-    "CLEANUP_CLIENT": {
-      "entry": [
-        {
-          "type": "close_http_2_client (client) (event)"
-        },
-        {
-          "type": "trigger (event)"
-        }
-      ],
-      "on": {
-        "CONNECTION_CLOSED": [
-          {
-            "target": "FINAL",
-            "actions": [
-              {
-                "type": "assign (result) (client_result)"
-              },
-              {
-                "type": "assign (result_received) (server_result)"
-              },
-              {
-                "type": "assign (sent_frames) (sent_frames)"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "CLEANUP_SERVER": {
-      "entry": [
-        {
-          "type": "close_http_1_server (server) (event)"
-        },
-        {
-          "type": "trigger (event)"
-        }
-      ],
-      "on": {
-        "CONNECTION_CLOSED": [
-          {
-            "target": "FINAL",
-            "actions": [
-              {
-                "type": "assign (result) (server_result)"
-              },
-              {
-                "type": "assign (result_received) (client_result)"
-              },
-              {
-                "type": "assign (packets_received) (packets_received)"
-              }
-            ]
-          }
-        ]
       }
     },
     "FINAL": {
